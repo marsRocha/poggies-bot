@@ -1,5 +1,6 @@
 package com.marsrocha.poggiesbot;
 
+import com.marsrocha.poggiesbot.commands.CommandManager;
 import com.marsrocha.poggiesbot.listeners.EventListener;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
@@ -20,7 +21,7 @@ public class PoggiesBot {
         jda = JDABuilder.createDefault(config.get("TOKEN"))
                 .setActivity(Activity.playing("with your mom"))
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT) // also enable privileged intent
-                .addEventListeners(new EventListener()) // Register listeners
+                .addEventListeners(new EventListener(), new CommandManager()) // Register listeners
                 .build();
     }
 
