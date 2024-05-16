@@ -21,7 +21,11 @@ public class PoggiesBot {
         jda = JDABuilder.createDefault(config.get("TOKEN"))
                 .setActivity(Activity.playing("with your mom"))
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT) // also enable privileged intent
-                .addEventListeners(new EventListener(), new CommandManager()) // Register listeners
+                // Register listeners
+                .addEventListeners(
+                        new EventListener(),
+                        new CommandManager()
+                        )
                 .build();
     }
 
