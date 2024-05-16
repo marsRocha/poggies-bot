@@ -13,15 +13,17 @@ import java.util.List;
 public class CommandManager extends ListenerAdapter {
 
     private final CommonCommands commonCommands;
+    private final AudioCommands audioCommands;
 
     public CommandManager() {
         commonCommands = new CommonCommands();
+        audioCommands = new AudioCommands();
     }
 
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         commonCommands.onSlashCommandInteraction(event);
-        
+        audioCommands.onSlashCommandInteraction(event);
     }
 
     // Guild commands -- instantly updated (max 100)
@@ -31,8 +33,8 @@ public class CommandManager extends ListenerAdapter {
 
         // get common commands
         commandData.addAll(commonCommands.getCommands());
-
-        
+        // get music commands
+        commandData.addAll(audioCommands.getCommands());
 
         event.getGuild().updateCommands().addCommands(commandData).queue();
     }
