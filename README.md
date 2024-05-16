@@ -24,7 +24,7 @@ Poggies has also hidden interactions that only activate by talking to him in cha
 ##Environment Variables
 - TOKEN: Your Discord bot token. Get it by creating a new bot application on the Discord Developer Portal.
   
-Poggies uses several libraries in its source code:
+## Libraries
 - **[JDA][jda-repo]** - Discord API Wrapper written in Java.
 - **[JDA-Utilities](https://github.com/JDA-Applications/JDA-Utilities)** - Extension for JDA to assist in Discord bot creation.
 - **[Lavaplayer](https://github.com/sedmelluq/lavaplayer)** - Audio player library for Discord.
