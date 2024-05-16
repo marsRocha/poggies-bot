@@ -109,7 +109,7 @@ public class EventListener extends ListenerAdapter {
 
     @Override
     public void onGuildJoin(GuildJoinEvent event) {
-        TextChannel generalChannel = event.getGuild().getTextChannelsByName("general", true).get(0);
+        TextChannel generalChannel = event.getGuild().getSystemChannel();
         generalChannel.sendMessage("harroo").queue();
         generalChannel.sendMessage("https://tenor.com/view/pepenet-pepecoin-pepe-peepo-pepenet-wave-gif-16025988913151322329").queue();
     }
