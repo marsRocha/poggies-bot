@@ -23,7 +23,7 @@ public class EventListener extends ListenerAdapter {
                 helloLine(event);
             } else if (message.toLowerCase().contains("shut up") || message.toLowerCase().contains("stfu")) {
                 shutupLine(event);
-            }else if (message.toLowerCase().contains("who") || message.toLowerCase().contains("you")) {
+            }else if (message.toLowerCase().contains("who") && message.toLowerCase().contains("you")) {
                 event.getChannel().sendMessage("im your new god").queue();
             }
             else {
