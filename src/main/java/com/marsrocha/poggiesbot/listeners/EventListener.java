@@ -18,12 +18,15 @@ public class EventListener extends ListenerAdapter {
             event.getChannel().sendMessage("https://tenor.com/view/peepo-gif-20356408").queue();
         } else if (message.toLowerCase().contains("morning squad") || message.toLowerCase().contains("good morning")) {
             morningLine(event);
-        } else if (message.toLowerCase().contains("poggies")) {
+        } else if (message.toLowerCase().contains("poggies") || message.contains(event.getJDA().getSelfUser().getAsMention())) {
             if (message.toLowerCase().contains("hello") || message.toLowerCase().contains("hi")) {
                 helloLine(event);
             } else if (message.toLowerCase().contains("shut up") || message.toLowerCase().contains("stfu")) {
                 shutupLine(event);
-            } else {
+            }else if (message.toLowerCase().contains("who") || message.toLowerCase().contains("you")) {
+                event.getChannel().sendMessage("im your new god").queue();
+            }
+            else {
                 randomLine(event);
             }
         }
@@ -88,20 +91,26 @@ public class EventListener extends ListenerAdapter {
 
     public void randomLine(MessageReceivedEvent event) {
         Random random = new Random();
-        int index = random.nextInt(4);
+        int index = random.nextInt(6);
 
         switch (index) {
             case 0 -> {
-                event.getChannel().sendMessage("sure.... ??").queue();
+                event.getChannel().sendMessage("yes.... ??").queue();
             }
             case 1 -> {
-                event.getChannel().sendMessage("yes").queue();
+                event.getChannel().sendMessage("did u say my name?").queue();
             }
             case 2 -> {
-                event.getChannel().sendMessage("hm").queue();
+                event.getChannel().sendMessage("hm?").queue();
             }
             case 3 -> {
                 event.getChannel().sendMessage("im busy").queue();
+            }
+            case 4 -> {
+                event.getChannel().sendMessage("beep boop").queue();
+            }
+            case 5 -> {
+                event.getChannel().sendMessage("👀").queue();
             }
         }
     }
